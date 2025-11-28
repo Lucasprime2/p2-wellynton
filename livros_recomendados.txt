@@ -1,6 +1,5 @@
-livro;nota
-2018, Minha História, Michelle Obama;10.0
-2005, A Menina que Roubava Livros, Markus Zusak;9.0
-2012, A Culpa é das Estrelas, John Green;8.0
-2003, O Código da Vinci, Dan Brown;7.0
-1960, O Sol é para Todos, Harper Lee;7.0
+1954, A sociedade do Anel, J.R.R. Tolkien, 10.0, lendo
+1997, Harry Potter e a Pedra Filosofal, J.K. Rowling, 10.0, lendo
+2012, A Culpa é das Estrelas, John Green, 7.0, lido
+2011, A Dança dos Dragões, George R.R Martin, 7.0, lido
+2015, A Garota no Trem, Paula Hawkins, 6.0, lendo

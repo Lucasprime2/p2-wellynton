@@ -8,55 +8,52 @@ if not os.path.exists(entrada_path):
     print("Arquivo livros_avaliacao.txt não encontrado em:", entrada_path)
     raise SystemExit
 
+
 registros = []
 with open(entrada_path, 'r', encoding='utf-8') as f:
-    for linha in f:
+    for i, linha in enumerate(f):
         linha = linha.strip()
         if not linha:
             continue
-        
-        partes = linha.split(', ')
-        if len(partes) < 5:
-            partes = linha.split(',')
-            if len(partes) < 5:
-                print("Linha em formato errado:", linha)
-                continue
-        
-        livro = ', '.join(partes[0:3]).strip()
-        nota_str = partes[3].strip()
-        status = partes[4].strip().lower()
-
+        if i == 0 and linha.lower().startswith('livro'):
+            continue
+        partes = linha.split(';')
+        if len(partes) < 3:
+            print("Linha em formato errado:", linha)
+            continue
+        livro = partes[0].strip()
+        nota_str = partes[1].strip()
+        status = partes[2].strip()
         try:
             nota = float(nota_str)
         except ValueError:
             print("Nota inválida na linha:", linha)
             continue
 
-        if status == "lido" or status == "lendo":
-            if ', ' in livro:
-                _, titulo = livro.split(', ', 1)
-                titulo_limpo = titulo.strip()
-            else:
-                titulo_limpo = livro
-            
-            registros.append((livro, nota, status, titulo_limpo.lower()))
+        if ',' in livro:
+            _, titulo = livro.split(',', 1)
+            titulo = titulo.strip()
+        else:
+            if status== "lido" or status== "lendo":
+                titulo = livro
+                registros.append((livro, nota, status, titulo.lower()))
 
 if not registros:
     print("Nenhum registro válido encontrado em", entrada_path)
     raise SystemExit
 
-def chave_ordenacao(item):
+def chave_registro(item):
     livro, nota, status, titulo_lower = item
-    return (-nota, titulo_lower)
-
-registros_ordenados = sorted(registros, key=chave_ordenacao)
+    return (-nota, status, titulo_lower)
+registros_ordenados = sorted(registros, key=chave_registro)
 top5 = registros_ordenados[:5]
 
 with open(saida_path, 'w', encoding='utf-8') as f:
-    for livro, nota, status, _ in top5:
-        f.write(f"{livro}, {nota}, {status}\n")
+    f.write("filme;nota;status\n")
+    for filme, nota, _ in top5:
+        f.write(f"{filme};{nota}\n")
 
-print("Arquivo de recomendações criado em:", saida_path)
+print("Arquivo de indicação criado em:", saida_path)
 print("Conteúdo gravado:")
 with open(saida_path, 'r', encoding='utf-8') as f:
     print(f.read())

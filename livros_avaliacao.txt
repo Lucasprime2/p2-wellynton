@@ -1,11 +1,10 @@
-livro;nota;status
-1997, Harry Potter e a Pedra Filosofal, J.K. Rowling;5.0;lido
-1954, A sociedade do Anel, J.R.R. Tolkien;6.0;na fila
-1960, O Sol é para Todos, Harper Lee;7.0;lendo
-2003, O Código da Vinci, Dan Brown;7.0;lendo
-1985, It - A coisa, Stephen King;8.0;na fila
-2011, A Dança dos Dragões, George R.R Martin;7.0;na fila
-2018, Minha História, Michelle Obama;10.0;lido
-2005, A Menina que Roubava Livros, Markus Zusak;9.0;lendo
-2012, A Culpa é das Estrelas, John Green;8.0;lendo
-2015, A Garota no Trem, Paula Hawkins;7.0;lendo
+1997, Harry Potter e a Pedra Filosofal, J.K. Rowling, 10.0, lendo
+1954, A sociedade do Anel, J.R.R. Tolkien, 10.0, lendo
+1960, O Sol é para Todos, Harper Lee, 5.0, lido
+2003, O Código da Vinci, Dan Brown, 10.0, na fila
+1985, It - A coisa, Stephen King, 5.0, lido
+2011, A Dança dos Dragões, George R.R Martin, 7.0, lido
+2018, Minha História, Michelle Obama, 5.0, lendo
+2005, A Menina que Roubava Livros, Markus Zusak, 8.0, na fila
+2012, A Culpa é das Estrelas, John Green, 7.0, lido
+2015, A Garota no Trem, Paula Hawkins, 6.0, lendo
